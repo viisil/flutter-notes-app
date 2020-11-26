@@ -12,6 +12,7 @@ import 'package:notes/services/database.dart';
 import 'package:outline_material_icons/outline_material_icons.dart';
 import 'package:share/share.dart';
 
+// ignore: must_be_immutable
 class ViewNotePage extends StatefulWidget {
   Function() triggerRefetch;
   NotesModel currentNote;

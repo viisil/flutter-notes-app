@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/gestures.dart';
+// ignore: unused_import
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -9,8 +9,8 @@ import 'package:flutter/painting.dart' as prefix0;
 import 'package:flutter/widgets.dart';
 import 'package:notes/data/models.dart';
 import 'package:notes/services/database.dart';
-import 'package:outline_material_icons/outline_material_icons.dart';
 
+// ignore: must_be_immutable
 class EditNotePage extends StatefulWidget {
   Function() triggerRefetch;
   NotesModel existingNote;

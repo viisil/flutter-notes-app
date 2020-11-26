@@ -12,6 +12,7 @@ import 'settings.dart';
 import 'package:outline_material_icons/outline_material_icons.dart';
 import '../components/cards.dart';
 
+// ignore: must_be_immutable
 class MyHomePage extends StatefulWidget {
   Function(Brightness brightness) changeTheme;
   MyHomePage({Key key, this.title, Function(Brightness brightness) changeTheme})
@@ -56,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: () {
           gotoEditNote();
         },
-        label: Text('Add note'.toUpperCase()),
+        label: Text('Add nota'.toUpperCase()),
         icon: Icon(Icons.add),
       ),
       body: GestureDetector(
@@ -99,8 +100,8 @@ class _MyHomePageState extends State<MyHomePage> {
               buildImportantIndicatorText(),
               Container(height: 32),
               ...buildNoteComponentsList(),
-              GestureDetector(
-                  onTap: gotoEditNote, child: AddNoteCardComponent()),
+              // ignoreGestureDetector(
+              //onTap: gotoEditNote, child: AddNoteCardComponent()),
               Container(height: 100)
             ],
           ),
@@ -167,7 +168,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
                       textInputAction: TextInputAction.search,
                       decoration: InputDecoration.collapsed(
-                        hintText: 'Search',
+                        hintText: 'Buscar',
                         hintStyle: TextStyle(
                             color: Colors.grey.shade300,
                             fontSize: 18,
@@ -199,11 +200,11 @@ class _MyHomePageState extends State<MyHomePage> {
           margin: EdgeInsets.only(top: 8, bottom: 32, left: 10),
           width: headerShouldHide ? 0 : 200,
           child: Text(
-            'Your Notes',
+            'Anota Aí!',
             style: TextStyle(
                 fontFamily: 'ZillaSlab',
                 fontWeight: FontWeight.w700,
-                fontSize: 36,
+                fontSize: 25,
                 color: Theme.of(context).primaryColor),
             overflow: TextOverflow.clip,
             softWrap: false,
@@ -225,7 +226,7 @@ class _MyHomePageState extends State<MyHomePage> {
       firstChild: Padding(
         padding: const EdgeInsets.only(top: 8),
         child: Text(
-          'Only showing notes marked important'.toUpperCase(),
+          'Mostrando apenas notas marcadas como importantes'.toUpperCase(),
           style: TextStyle(
               fontSize: 12, color: Colors.blue, fontWeight: FontWeight.w500),
         ),
@@ -299,7 +300,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void refetchNotesFromDB() async {
     await setNotesFromDB();
-    print("Refetched notes");
+    print("Notas renovadas");
   }
 
   openNoteToRead(NotesModel noteData) async {

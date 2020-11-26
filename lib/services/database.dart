@@ -60,6 +60,7 @@ class NotesDatabaseService {
   Future<NotesModel> addNoteInDB(NotesModel newNote) async {
     final db = await database;
     if (newNote.title.trim().isEmpty) newNote.title = 'Untitled Note';
+    // ignore: missing_return
     int id = await db.transaction((transaction) {
       transaction.rawInsert(
           'INSERT into Notes(title, content, date, isImportant) VALUES ("${newNote.title}", "${newNote.content}", "${newNote.date.toIso8601String()}", ${newNote.isImportant == true ? 1 : 0});');
